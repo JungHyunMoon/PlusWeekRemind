@@ -1,9 +1,9 @@
-package com.sparta.plusweekremind.controller;
+package com.sparta.plusweekremind.user.controller;
 
 import com.sparta.plusweekremind.common.exception.CustomException;
 import com.sparta.plusweekremind.common.jwt.JwtUtil;
-import com.sparta.plusweekremind.dto.request.SignRequestDto;
-import com.sparta.plusweekremind.service.UserService;
+import com.sparta.plusweekremind.user.dto.request.SignRequestDto;
+import com.sparta.plusweekremind.user.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

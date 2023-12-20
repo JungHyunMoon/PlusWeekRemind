@@ -1,4 +1,4 @@
-package com.sparta.plusweekremind.dto.request;
+package com.sparta.plusweekremind.user.dto.request;
 
 import lombok.Getter;
 import lombok.Setter;

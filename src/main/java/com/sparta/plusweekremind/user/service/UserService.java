@@ -1,17 +1,15 @@
-package com.sparta.plusweekremind.service;
+package com.sparta.plusweekremind.user.service;
 
 import com.sparta.plusweekremind.common.exception.CustomException;
 import com.sparta.plusweekremind.common.exception.ErrorCode;
 import com.sparta.plusweekremind.common.jwt.JwtUtil;
 import com.sparta.plusweekremind.common.security.UserDetailsServiceImpl;
-import com.sparta.plusweekremind.dto.request.SignRequestDto;
-import com.sparta.plusweekremind.entity.User;
-import com.sparta.plusweekremind.repository.UserRepository;
-import jakarta.servlet.http.HttpServletResponse;
+import com.sparta.plusweekremind.user.dto.request.SignRequestDto;
+import com.sparta.plusweekremind.user.entity.User;
+import com.sparta.plusweekremind.user.repository.UserRepository;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

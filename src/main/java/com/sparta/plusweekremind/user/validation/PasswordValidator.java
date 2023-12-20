@@ -1,6 +1,6 @@
-package com.sparta.plusweekremind.common.validation;
+package com.sparta.plusweekremind.user.validation;
 
-import com.sparta.plusweekremind.dto.request.SignRequestDto;
+import com.sparta.plusweekremind.user.dto.request.SignRequestDto;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 

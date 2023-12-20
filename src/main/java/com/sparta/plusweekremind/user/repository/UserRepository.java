@@ -1,6 +1,6 @@
-package com.sparta.plusweekremind.repository;
+package com.sparta.plusweekremind.user.repository;
 
-import com.sparta.plusweekremind.entity.User;
+import com.sparta.plusweekremind.user.entity.User;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 

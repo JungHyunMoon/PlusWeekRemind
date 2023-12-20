@@ -1,4 +1,4 @@
-package com.sparta.plusweekremind.common.validation;
+package com.sparta.plusweekremind.user.validation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
@@ -9,11 +9,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Documented
-@Constraint(validatedBy = PasswordValidator.class)
+@Constraint(validatedBy = UsernameValidator.class)
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ValidPassword {
+public @interface ValidUsername {
+    String message() default "닉네임은 최소 3자 이상, 알파벳 대소문자와 숫자가 포함되어야 합니다";
     Class<?>[] groups() default {};
-    String message() default "닉네임을 포함하지 않는 4자 이상 비밀번호를 입력하세요.";
     Class<? extends Payload>[] payload() default {};
 }

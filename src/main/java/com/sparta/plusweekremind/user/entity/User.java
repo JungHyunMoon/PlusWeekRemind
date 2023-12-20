@@ -1,4 +1,4 @@
-package com.sparta.plusweekremind.entity;
+package com.sparta.plusweekremind.user.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
