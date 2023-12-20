@@ -33,10 +33,4 @@ public class UserController {
         return userService.isAlreadyExistUserName(username);
     }
 
-//    @PostMapping("/signin")
-//    public ResponseEntity<String> signin(@Valid @RequestBody SignupRequestDto requestDto, HttpServletResponse response) throws CustomException {
-//        userService.signin(requestDto, response);
-//        return new ResponseEntity<>("로그인 성공", HttpStatus.OK);
-//    }
-
 }
