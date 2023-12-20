@@ -1,7 +1,7 @@
 package com.sparta.plusweekremind.common.security;
 
-import com.sparta.plusweekremind.entity.User;
-import com.sparta.plusweekremind.repository.UserRepository;
+import com.sparta.plusweekremind.user.entity.User;
+import com.sparta.plusweekremind.user.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

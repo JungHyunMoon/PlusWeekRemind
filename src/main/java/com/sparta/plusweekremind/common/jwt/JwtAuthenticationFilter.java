@@ -2,7 +2,7 @@ package com.sparta.plusweekremind.common.jwt;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sparta.plusweekremind.common.security.UserDetailsImpl;
-import com.sparta.plusweekremind.dto.request.LoginRequestDto;
+import com.sparta.plusweekremind.user.dto.request.LoginRequestDto;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -54,6 +54,16 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     @Override
     protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException failed) throws IOException, ServletException {
         log.info("로그인 실패");
-        response.setStatus(401);
+        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // 401 상태 코드 설정
+
+        // JSON 형식의 응답 본문 생성
+        String jsonPayload = "{\"message\": \"닉네임 또는 패스워드를 확인해주세요\"}";
+
+        // 응답 헤더 설정
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
+        // 응답 본문에 메시지 작성
+        response.getWriter().write(jsonPayload);
     }
 }

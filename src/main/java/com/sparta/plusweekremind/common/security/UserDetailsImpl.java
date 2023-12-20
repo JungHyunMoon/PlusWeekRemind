@@ -1,6 +1,6 @@
 package com.sparta.plusweekremind.common.security;
 
-import com.sparta.plusweekremind.entity.User;
+import com.sparta.plusweekremind.user.entity.User;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -10,9 +10,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 public class UserDetailsImpl implements UserDetails {
 
-    private final com.sparta.plusweekremind.entity.User user;
+    private final User user;
 
-    public UserDetailsImpl(com.sparta.plusweekremind.entity.User user) {
+    public UserDetailsImpl(User user) {
         this.user = user;
     }
 

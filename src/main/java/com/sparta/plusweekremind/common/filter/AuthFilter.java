@@ -1,8 +1,8 @@
 package com.sparta.plusweekremind.common.filter;
 
 import com.sparta.plusweekremind.common.jwt.JwtUtil;
-import com.sparta.plusweekremind.entity.User;
-import com.sparta.plusweekremind.repository.UserRepository;
+import com.sparta.plusweekremind.user.entity.User;
+import com.sparta.plusweekremind.user.repository.UserRepository;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
