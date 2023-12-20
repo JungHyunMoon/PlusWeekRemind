@@ -59,6 +59,7 @@ public class WebSecurityConfig {
             authorizeHttpRequests
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                 .requestMatchers("/api/user/signup").permitAll()
+                .requestMatchers("/api/user/isAlreadyExistUserName").permitAll()
                 .requestMatchers("/swagger-ui/**").permitAll()
                 .requestMatchers("/api-docs/**").permitAll()
                 .anyRequest().authenticated() // 모든 요청 인증처리

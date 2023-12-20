@@ -38,6 +38,10 @@ public class UserService {
         userRepository.save(user);
     }
 
+    public Boolean isAlreadyExistUserName(String username) {
+        return userRepository.findByUsername(username).isPresent();
+    }
+
 //    public void signin(SignRequestDto requestDto, HttpServletResponse response) throws CustomException {
 //        UserDetails userDetails = userDetailsService.loadUserByUsername(requestDto.getUsername());
 //        if (!passwordEncoder.matches(requestDto.getPassword(), userDetails.getPassword())) {
