@@ -4,6 +4,7 @@ import com.sparta.plusweekremind.board.dto.CreateBoardDto.CreateBoardDto;
 import com.sparta.plusweekremind.board.entity.Board;
 import com.sparta.plusweekremind.board.service.BoardService;
 import com.sparta.plusweekremind.common.dto.ApiResponseDto;
+import com.sparta.plusweekremind.common.exception.CustomException;
 import com.sparta.plusweekremind.common.security.UserDetailsImpl;
 import com.sparta.plusweekremind.user.entity.User;
 import jakarta.validation.Valid;
@@ -33,7 +34,7 @@ public class BoardController {
         User user = userDetails.getUser();
         // 게시글 생성 로직을 여기에 구현합니다.
         Board board = boardService.createBoard(user, createBoardDto, file);
-        return new ApiResponseDto<>("게시글이 생성되었습니다", 201, board);
+        return new ApiResponseDto<>("게시글이 생성 되었습니다", 201, board);
     }
 
     @GetMapping()
@@ -45,6 +46,13 @@ public class BoardController {
 
         List<Board> boards = boardService.getBoardSorted(page, size, sortBy, order).getContent();
 
-        return new ApiResponseDto<>("게시글 조회 성공", 200, boards);
+        return new ApiResponseDto<>("게시글 목록 조회 성공", 200, boards);
+    }
+
+    @GetMapping("/{boardId}")
+    public ApiResponseDto<?> getBoardById(@PathVariable Long boardId) throws CustomException {
+        Board board = boardService.getBoardById(boardId);
+
+        return new ApiResponseDto<>("게시글 조회 성공", 200, boardId);
     }
 }

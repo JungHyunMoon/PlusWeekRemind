@@ -20,9 +20,6 @@ public class FileStorageService {
     private final String uploadDir = "images/";
 
     public FileStorageService() {
-        log.info("==================================");
-        log.info(uploadDir);
-        log.info("==================================");
         this.fileStorageLocation = Paths.get(uploadDir)
             .toAbsolutePath().normalize();
 
