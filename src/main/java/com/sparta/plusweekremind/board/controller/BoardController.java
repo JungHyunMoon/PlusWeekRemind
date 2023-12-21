@@ -7,7 +7,13 @@ import com.sparta.plusweekremind.common.dto.ApiResponseDto;
 import com.sparta.plusweekremind.common.security.UserDetailsImpl;
 import com.sparta.plusweekremind.user.entity.User;
 import jakarta.validation.Valid;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
@@ -30,5 +36,15 @@ public class BoardController {
         return new ApiResponseDto<>("게시글이 생성되었습니다", 201, board);
     }
 
-    // 다른 메서드들 ...
+    @GetMapping()
+    public ApiResponseDto<?> getSortedBoards(
+        @RequestParam(name = "page", defaultValue = "0") int page,
+        @RequestParam(name = "size", defaultValue = "5") int size,
+        @RequestParam(name = "sortBy", defaultValue = "createdAt") String sortBy,
+        @RequestParam(name = "order", defaultValue = "ASC") String order) {
+
+        List<Board> boards = boardService.getBoardSorted(page, size, sortBy, order).getContent();
+
+        return new ApiResponseDto<>("게시글 조회 성공", 200, boards);
+    }
 }
